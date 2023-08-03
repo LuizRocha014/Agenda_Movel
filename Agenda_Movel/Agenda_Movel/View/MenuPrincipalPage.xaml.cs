@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Agenda_Movel.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,27 +13,27 @@ namespace Agenda_Movel.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MenuPrincipalPage : ContentPage
     {
+        private MenuPrincipalViewModel _menuPrincipalViewModel;
         public MenuPrincipalPage()
         {
             InitializeComponent();
-            List<string> list = new List<string>();
-            list.Add("Home");
-            list.Add("Profile");
-            list.Add("Inbox");
-            list.Add("Outbox");
-            list.Add("Sent");
-            list.Add("Draft");
-            listView.ItemsSource = list;
+            _menuPrincipalViewModel  = BindingContext as MenuPrincipalViewModel;
+
+
         }
         void hamburgerButton_Clicked(object sender, EventArgs e)
         {
             navigationDrawer.ToggleDrawer();
         }
 
-        private void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+       
+
+        public void listView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            // Your codes here
-            navigationDrawer.ToggleDrawer();
+           
+
+            _menuPrincipalViewModel.MudaPagina(e.Item);
+            
         }
     }
 }

@@ -21,11 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Models\" />
-    <Folder Include="Data\Interface\" />
     <Folder Include="Data\Service\" />
     <Folder Include="Data\Repository\" />
-    <Folder Include="ViewModel\" />
   </ItemGroup>
 
   <ItemGroup>

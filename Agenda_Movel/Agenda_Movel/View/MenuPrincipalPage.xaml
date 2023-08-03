@@ -3,7 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:navigationdrawer="clr-namespace:Syncfusion.SfNavigationDrawer.XForms;assembly=Syncfusion.SfNavigationDrawer.XForms"
              x:Class="Agenda_Movel.View.MenuPrincipalPage"
+             xmlns:viewModel="clr-namespace:Agenda_Movel.ViewModel"
              NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <viewModel:MenuPrincipalViewModel/>
+    </ContentPage.BindingContext>
+    
     <navigationdrawer:SfNavigationDrawer x:Name="navigationDrawer" 
                                          DrawerWidth ="200" 
                                          DrawerHeaderHeight="160">
@@ -64,14 +70,15 @@
         </navigationdrawer:SfNavigationDrawer.DrawerHeaderView>
         <navigationdrawer:SfNavigationDrawer.DrawerContentView>
             <ListView x:Name="listView" 
-                      ItemSelected="listView_ItemSelected">
+                      ItemsSource="{Binding ListMenuInicial}"
+                      ItemTapped="listView_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout HeightRequest="40">
                                 <Label Margin="10,7,0,0" 
                                        HorizontalTextAlignment="Center"
-                                       Text="{Binding}" 
+                                       Text="{Binding Nome}" 
                                        FontSize="16"/>
                             </StackLayout>
                         </ViewCell>
