@@ -71,7 +71,7 @@
         <navigationdrawer:SfNavigationDrawer.DrawerContentView>
             <ListView x:Name="listView" 
                       ItemsSource="{Binding ListMenuInicial}"
-                      ItemTapped="listView_ItemTapped">
+                      ItemSelected="listView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

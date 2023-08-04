@@ -1,7 +1,11 @@
 ﻿using Agenda_Movel.Data.Models;
+using Agenda_Movel.View.viewPopup;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Agenda_Movel.ViewModel
@@ -22,18 +26,21 @@ namespace Agenda_Movel.ViewModel
             OnPropertyChanged("ListMenuInicial");
         }
 
-        public void MudaPagina(object valor)
+        public async void MudaPaginaAsync(object valor)
         {
+            Console.WriteLine(valor);
             switch (valor)
             {
-                case "GetAgenda":
+                case 0:
+                    await PopupNavigation.PushAsync(new SelecaoPopupPage());
                     break;
-                case "GetOficina":
+                case 1:
+                    Console.WriteLine("1");
                     break;
                 default:
                     break;
             }
-        }   
+        }
 
     }
 

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage  xmlns:pages="http://rotorgames.com" 
+                  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+                  x:Class="Agenda_Movel.View.viewPopup.SelecaoPopupPage">
+
+   
+    <Frame HeightRequest="200"
+           CornerRadius="10"
+           WidthRequest="300"
+           VerticalOptions="Center"
+           HorizontalOptions="Center"
+           BackgroundColor="White">
+
+        <Grid RowDefinitions="50*,25*,25*">
+            <buttons:SfButton Text="AGENDA" Grid.Row="1" CornerRadius="7" BackgroundColor="#0e07e0" />
+            <buttons:SfButton  Text="OFICINA" Grid.Row="2" CornerRadius="7" BackgroundColor="#0e07e0"/>
+        </Grid>
+    </Frame>
+
+
+</pages:PopupPage>

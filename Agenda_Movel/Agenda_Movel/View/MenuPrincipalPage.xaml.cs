@@ -26,14 +26,10 @@ namespace Agenda_Movel.View
             navigationDrawer.ToggleDrawer();
         }
 
-       
-
-        public void listView_ItemTapped(object sender, ItemTappedEventArgs e)
+        private async void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-           
-
-            _menuPrincipalViewModel.MudaPagina(e.Item);
-            
+            var item = e.SelectedItemIndex;
+            _menuPrincipalViewModel.MudaPaginaAsync(item);
         }
     }
 }
