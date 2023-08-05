@@ -17,6 +17,8 @@
     <PackageReference Include="sqlite-net-sqlcipher" Version="1.8.116" />
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="21.1.39" />
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="22.1.39" />
+    <PackageReference Include="Syncfusion.Xamarin.SfCalendar" Version="22.1.39" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="21.1.39" />
     <PackageReference Include="Syncfusion.Xamarin.SfNavigationDrawer" Version="22.1.38" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
@@ -28,7 +30,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="View\Agenda\PaginaIncialAgendaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="View\MenuPrincipalPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\Oficina\PaginaInicialOficinaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\viewPopup\SelecaoPopupPage.xaml">

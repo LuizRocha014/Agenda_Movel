@@ -1,4 +1,6 @@
 ﻿using Agenda_Movel.Data.Models;
+using Agenda_Movel.View.Agenda;
+using Agenda_Movel.View.Oficina;
 using Agenda_Movel.View.viewPopup;
 using Rg.Plugins.Popup.Services;
 using System;
@@ -28,14 +30,14 @@ namespace Agenda_Movel.ViewModel
 
         public async void MudaPaginaAsync(object valor)
         {
-            Console.WriteLine(valor);
-            switch (valor)
+            var a = valor as MenuInicial;
+            switch (a.Valor)
             {
-                case 0:
-                    await PopupNavigation.PushAsync(new SelecaoPopupPage());
+                case "GetAgenda":
+                   await App.Current.MainPage.Navigation.PushAsync(new PaginaIncialAgendaPage(), false);
                     break;
-                case 1:
-                    Console.WriteLine("1");
+                case "GetOficina":
+                    await App.Current.MainPage.Navigation.PushAsync(new PaginaInicialOficinaPage(), false);
                     break;
                 default:
                     break;

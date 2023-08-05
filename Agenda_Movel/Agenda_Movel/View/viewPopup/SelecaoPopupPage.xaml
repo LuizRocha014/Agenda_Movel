@@ -6,16 +6,17 @@
                   x:Class="Agenda_Movel.View.viewPopup.SelecaoPopupPage">
 
    
-    <Frame HeightRequest="200"
+    <Frame HeightRequest="140"
            CornerRadius="10"
            WidthRequest="300"
            VerticalOptions="Center"
            HorizontalOptions="Center"
            BackgroundColor="White">
 
-        <Grid RowDefinitions="50*,25*,25*">
-            <buttons:SfButton Text="AGENDA" Grid.Row="1" CornerRadius="7" BackgroundColor="#0e07e0" />
-            <buttons:SfButton  Text="OFICINA" Grid.Row="2" CornerRadius="7" BackgroundColor="#0e07e0"/>
+        <Grid RowDefinitions="30*,35*,35*">
+            <Label Text="Selecione um módulo" Grid.Row="0" HorizontalTextAlignment="Center" TextColor="{StaticResource Text}" FontAttributes="Bold" FontSize="22"/>
+            <buttons:SfButton Text="AGENDA" Grid.Row="1" CornerRadius="7" BackgroundColor="{StaticResource PrimaryColor}" FontAttributes="Bold" />
+            <buttons:SfButton  Text="OFICINA" Grid.Row="2" CornerRadius="7" BackgroundColor="{StaticResource PrimaryColor}" FontAttributes="Bold"/>
         </Grid>
     </Frame>
 

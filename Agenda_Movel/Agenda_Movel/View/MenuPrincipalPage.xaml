@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:navigationdrawer="clr-namespace:Syncfusion.SfNavigationDrawer.XForms;assembly=Syncfusion.SfNavigationDrawer.XForms"
              x:Class="Agenda_Movel.View.MenuPrincipalPage"
-             xmlns:viewModel="clr-namespace:Agenda_Movel.ViewModel"
+             xmlns:viewModel="clr-namespace:Agenda_Movel.ViewModel" xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              NavigationPage.HasNavigationBar="False">
 
     <ContentPage.BindingContext>
@@ -69,22 +69,18 @@
             </Grid>
         </navigationdrawer:SfNavigationDrawer.DrawerHeaderView>
         <navigationdrawer:SfNavigationDrawer.DrawerContentView>
-            <ListView x:Name="listView" 
+            <syncfusion:SfListView x:Name="listView" 
                       ItemsSource="{Binding ListMenuInicial}"
-                      ItemSelected="listView_ItemSelected">
-                <ListView.ItemTemplate>
+                      SelectionBackgroundColor="Transparent"
+                      ItemTapped="listView_ItemTapped">
+                <syncfusion:SfListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <StackLayout HeightRequest="40">
-                                <Label Margin="10,7,0,0" 
-                                       HorizontalTextAlignment="Center"
-                                       Text="{Binding Nome}" 
-                                       FontSize="16"/>
-                            </StackLayout>
-                        </ViewCell>
+                        <Grid>
+                            <Label Text="{Binding Nome}" HorizontalTextAlignment="Center" FontAttributes="Bold" VerticalTextAlignment="Center"/>
+                        </Grid>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </syncfusion:SfListView.ItemTemplate>
+            </syncfusion:SfListView>
         </navigationdrawer:SfNavigationDrawer.DrawerContentView>
     </navigationdrawer:SfNavigationDrawer>
 </ContentPage>
