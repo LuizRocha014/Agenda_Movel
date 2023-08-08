@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using Agenda_Movel.Data.Models;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -29,6 +30,8 @@ namespace Agenda_Movel.Data.Context
         {
             var databasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "database.db3");
             _sqlLiteConnection = new SQLiteConnection(databasePath);
+
+            _sqlLiteConnection.CreateTable<Agenda>();
         }
 
 

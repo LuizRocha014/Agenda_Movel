@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Syncfusion.SfCalendar.XForms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +17,10 @@ namespace Agenda_Movel.View.Agenda
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void calendar_SelectionChanged(object sender, Syncfusion.SfCalendar.XForms.SelectionChangedEventArgs e)
+        {
+
+        }
+    }
 }
