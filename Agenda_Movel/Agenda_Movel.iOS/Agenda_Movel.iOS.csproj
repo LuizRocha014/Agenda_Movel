@@ -142,7 +142,7 @@
       <Version>22.1.39</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfListView">
-      <Version>21.1.39</Version>
+      <Version>22.1.39</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfNavigationDrawer">
       <Version>22.1.38</Version>

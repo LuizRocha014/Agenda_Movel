@@ -1,15 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:syncfusion="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms"
-             xmlns:local="clr-namespace:Agenda_Movel.ViewModel.Agenda"
-             x:Class="Agenda_Movel.View.Agenda.PaginaIncialAgendaPage"
+             xmlns:viewModel ="clr-namespace:Agenda_Movel.ViewModel.AgendaViewModel" xmlns:syncfusion="clr-namespace:Syncfusion.SfSchedule.XForms;assembly=Syncfusion.SfSchedule.XForms"
+      x:Class="Agenda_Movel.View.Agenda.PaginaIncialAgendaPage"
              Title="Agenda">
-    <ContentPage.Content>
-        <syncfusion:SfCalendar x:Name="calendar" InlineViewMode="Agenda" 
-                               AgendaViewHeight="300" ShowInlineEvents="True" 
-                               SelectionMode="SingleSelection" 
-                               DataSource="{Binding ListaAgendas}">
-        </syncfusion:SfCalendar>
-    </ContentPage.Content>
+
+   
+    <!--header-->
+    <!--
+    <Grid Grid.Row="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+    </Grid>-->
+
+    <Grid Grid.Row="0" IsVisible="true">
+        <syncfusion:SfSchedule  ScheduleView="MonthView" x:Name="schedule" CellTapped="schedule_CellTapped" CellDoubleTapped="schedule_CellDoubleTapped" HeaderHeight="100" VisibleDatesChangedEvent="schedule_VisibleDatesChangedEvent">
+            <syncfusion:SfSchedule.MonthViewSettings>
+                <syncfusion:MonthViewSettings ShowAgendaView="true" TodayBackground="#306092" >
+                    <syncfusion:MonthViewSettings.MonthLabelSettings>
+                        <syncfusion:MonthLabelSettings  DateFormat="dd">
+                            <syncfusion:MonthLabelSettings.DayFormat>
+                                <OnPlatform x:TypeArguments="x:String" iOS="EEE" Android="EEE" />
+                            </syncfusion:MonthLabelSettings.DayFormat>
+                        </syncfusion:MonthLabelSettings>
+                    </syncfusion:MonthViewSettings.MonthLabelSettings>
+                    <syncfusion:MonthViewSettings.AgendaViewStyle>
+                        <syncfusion:AgendaViewStyle DateFontColor="#396090" 
+                            HeaderHeight="40" 
+                            DateFormat="dd MMMM, yyyy" 
+                            DateFontSize="15" 
+                            DateFontFamily="Arial" 
+                            TimeFontColor="White" 
+                            TimeFontSize="13" 
+                            TimeFontFamily="Arial" 
+                            TimeFormat="hh a"
+                            BackgroundColor="#f0f0f0" 
+                            SubjectFontColor="White"
+                            SubjectFontSize="13" 
+                            SubjectFontFamily="Arial"
+                            SubjectFontAttributes="Bold">
+                        </syncfusion:AgendaViewStyle>
+                    </syncfusion:MonthViewSettings.AgendaViewStyle>
+                </syncfusion:MonthViewSettings>
+            </syncfusion:SfSchedule.MonthViewSettings>
+        </syncfusion:SfSchedule>
+    </Grid>
 </ContentPage>
