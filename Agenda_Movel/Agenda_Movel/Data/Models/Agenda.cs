@@ -1,4 +1,5 @@
 ﻿using Agenda_Movel.Data.Models.Cummons;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -12,9 +13,9 @@ namespace Agenda_Movel.Data.Models
         public DateTime DataFinal { get; set; }
         public string Titulo { get; set; }
         public string Obaservacao { get; set; }
-        public Color Cores { get; set; }
         public StatusAgenda Status { get; set; }
-
+        
+        [Ignore]
         public string CorStatus
         {
             get
@@ -44,6 +45,8 @@ namespace Agenda_Movel.Data.Models
                 return cor;
             }
         }
+       
+       
         public enum StatusAgenda
         {
             Agendado,

@@ -15,23 +15,26 @@
     <PackageReference Include="FontAwesome" Version="4.7.0" />
     <PackageReference Include="Rg.Plugins.Popup" Version="2.1.0" />
     <PackageReference Include="sqlite-net-sqlcipher" Version="1.8.116" />
-    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="21.1.39" />
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="22.1.39" />
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="22.1.39" />
     <PackageReference Include="Syncfusion.Xamarin.SfCalendar" Version="22.1.39" />
     <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="22.1.39" />
     <PackageReference Include="Syncfusion.Xamarin.SfNavigationDrawer" Version="22.1.38" />
     <PackageReference Include="Syncfusion.Xamarin.SfSchedule" Version="22.1.39" />
+    <PackageReference Include="System.Text.Json" Version="7.0.3" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Data\Repository\" />
-    <Folder Include="Data\Service\" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="View\Agenda\PaginaIncialAgendaPage.xaml">
+    <EmbeddedResource Update="View\AgendaPage\AdicionaTarefaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\AgendaPage\PaginaIncialAgendaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\MenuPrincipalPage.xaml">

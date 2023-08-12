@@ -133,7 +133,7 @@
       <Version>1.8.116</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.Buttons">
-      <Version>21.1.39</Version>
+      <Version>22.1.39</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.Core">
       <Version>22.1.39</Version>

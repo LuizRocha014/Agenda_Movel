@@ -73,8 +73,7 @@ namespace Agenda_Movel.View.Agenda
 
         private void schedule_CellDoubleTapped(object sender, Syncfusion.SfSchedule.XForms.CellTappedEventArgs e)
         {
-            var dateTime = e.Datetime;
-            App.Current.MainPage.DisplayAlert("Atenção", "Boa", "OK");
+            App.Current.MainPage.Navigation.PushAsync(new AdicionaTarefaPage(),false);
         }
 
         private void schedule_VisibleDatesChangedEvent(object sender, Syncfusion.SfSchedule.XForms.VisibleDatesChangedEventArgs e)
