@@ -7,6 +7,7 @@ using Syncfusion.SfSchedule.XForms;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
@@ -24,16 +25,17 @@ namespace Agenda_Movel.ViewModel.AgendaViewModel
         {
             _agendaRepository = new AgendaRepository();
             _listaAgenda = new ObservableCollection<Agenda>();
-             IniciaListAgenda();
+             //IniciaListAgenda();
           
 
         }
 
-        public async void IniciaListAgenda()
+        public  List<Agenda>  IniciaListAgenda()
         {
             try
             {
-               
+                _agendaRepository = new AgendaRepository();
+                return _agendaRepository.GetAll();
 
             }
             catch (Exception e)

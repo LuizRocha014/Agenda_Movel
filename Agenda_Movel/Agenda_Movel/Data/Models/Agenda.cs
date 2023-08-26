@@ -10,7 +10,7 @@ namespace Agenda_Movel.Data.Models
     public class Agenda : Sincronismo
     {
         public DateTime DataInicial { get; set; }
-        public DateTime DataFinal { get; set; }
+        public TimeSpan DataFinal { get; set; }
         public string Titulo { get; set; }
         public string Obaservacao { get; set; }
         public StatusAgenda Status { get; set; }

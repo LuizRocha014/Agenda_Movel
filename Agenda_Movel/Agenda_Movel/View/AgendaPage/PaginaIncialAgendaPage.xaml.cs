@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using Xamarin.Forms.Xaml;
 
 namespace Agenda_Movel.View.Agenda
@@ -26,20 +28,38 @@ namespace Agenda_Movel.View.Agenda
             Appointments();
 
         }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            On<iOS>().SetUseSafeArea(true);
+            Appointments();
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+              
+            }
+            finally
+            {
+               
+            }
+        }
         public void Appointments()
         {
             try
             {
                 //Cria uma instância para ScheduleAppointmentCollection
-
+               var list  = _paginaIncialAgendaViewModel.IniciaListAgenda();
                 //Para que  a lista que retornou do WS seja reconhecida como Appointment.
                 ScheduleAppointmentCollection scheduleAppointmentCollection = new ScheduleAppointmentCollection();
                 //_agendaPartialViewModel.ListarAgenda();
-                var ScheduleAppointments = _paginaIncialAgendaViewModel.ListaAgendas.Select(ag => new ScheduleAppointment
+                var ScheduleAppointments = list.Select(ag => new ScheduleAppointment
                 {
                     Id = ag.Id,
                     StartTime = ag.DataInicial,
-                    EndTime = ag.DataFinal,
                     //Formatado na model a separação!
                     Subject = ag.Titulo,
                     Location = "Gama STI",
@@ -73,7 +93,9 @@ namespace Agenda_Movel.View.Agenda
 
         private void schedule_CellDoubleTapped(object sender, Syncfusion.SfSchedule.XForms.CellTappedEventArgs e)
         {
-            App.Current.MainPage.Navigation.PushAsync(new AdicionaTarefaPage(),false);
+            var data = e.Datetime;
+        
+            App.Current.MainPage.Navigation.PushAsync(new AdicionaTarefaPage(data),false);
         }
 
         private void schedule_VisibleDatesChangedEvent(object sender, Syncfusion.SfSchedule.XForms.VisibleDatesChangedEventArgs e)

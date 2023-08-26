@@ -1,45 +1,89 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" 
+             xmlns:viewModel="clr-namespace:Agenda_Movel.ViewModel.AgendaViewModel"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              x:Class="Agenda_Movel.View.Agenda.AdicionaTarefaPage"
              Title="Adiciona Tarefa">
-    <Grid Margin="10,0,10,0" BackgroundColor="WhiteSmoke" RowDefinitions="20*,10*,10*,10*,10*,30*,8*" ColumnDefinitions="50*,50*" RowSpacing="0">
-        <inputLayout:SfTextInputLayout Grid.Row="0"
-                                       FocusedColor="{StaticResource PrimaryColor}"
-                                       Grid.ColumnSpan="2"
-                                       ContainerType="Outlined"
-                                       Hint="Titulo"
-                                       IsHintAlwaysFloated="True"
-                                       VerticalOptions="End">
-            <Entry />
-        </inputLayout:SfTextInputLayout>
-        <inputLayout:SfTextInputLayout Hint="Data Inicial"
-                                       FocusedColor="{StaticResource PrimaryColor}"
-                                       IsHintAlwaysFloated="True" Grid.Row="1" 
-                                       Grid.Column="0" ContainerType="Outlined">
-            <Entry />
-        </inputLayout:SfTextInputLayout>
-        <inputLayout:SfTextInputLayout Grid.Row="1" Grid.Column="1" 
-                                       FocusedColor="{StaticResource PrimaryColor}"
-                                       IsHintAlwaysFloated="True" 
-                                       ContainerType="Outlined" 
-                                       Hint="Data Final">
-            <Entry />
-        </inputLayout:SfTextInputLayout>
-        <inputLayout:SfTextInputLayout Grid.Row="2"  Hint="Observação" 
-                                       IsHintAlwaysFloated="True" 
-                                       ContainerType="Outlined" 
-                                       Grid.ColumnSpan="2">
-            <Entry />
-        </inputLayout:SfTextInputLayout>
-        <BoxView BackgroundColor="Black" Grid.Row="3"/>
-        <BoxView BackgroundColor="Blue" Grid.Row="4"/>
-        <Grid Grid.Row="6" Grid.ColumnSpan="2" BackgroundColor="Transparent" Padding="5">
-            <buttons:SfButton x:Name="SfButton" 
-                              CornerRadius="9" 
-                              Text="SALVAR"
-                              BackgroundColor="{StaticResource PrimaryColor}" 
-                              TextColor="White"/>
+
+    <ContentPage.BindingContext>
+        <viewModel:AdicionaTarefaViewModel/>
+    </ContentPage.BindingContext>
+    <Grid  Margin="10,10,10,10" RowDefinitions="92*,8*">
+        <Grid BackgroundColor="Transparent"  RowDefinitions="Auto,Auto,Auto,Auto" ColumnDefinitions="50*,50*" RowSpacing="0">
+
+            <Grid BackgroundColor="Transparent" RowDefinitions="Auto,Auto,Auto" RowSpacing="0" Grid.ColumnSpan="2">
+                <Label Text="Titulo" FontSize="18" Padding="0" FontAttributes="Bold" TextColor="Black"/>
+                <Label Text="Escreva o titulo da agenda" FontSize="12" Grid.Row="1" Padding="0"/>
+                <inputLayout:SfTextInputLayout         InputViewPadding="8"
+                                                   BackgroundColor="Transparent"
+                                                   Padding="0,-5,0,0"
+                                                   FocusedColor="{StaticResource PrimaryColor}"
+                                                   MinimumHeightRequest="100"                
+                                                   ReserveSpaceForAssistiveLabels="False"
+                                                   Margin="0,5,0,20"
+                                                   Grid.Row="2"
+                                                   ContainerType="Outlined"
+                                                   OutlineCornerRadius="8">
+                    <Entry  Margin="10" Grid.Row="2" Text="{Binding Titulo}"   />
+                </inputLayout:SfTextInputLayout>
+            </Grid>
+
+            <Grid BackgroundColor="Transparent" RowDefinitions="Auto,Auto,Auto" RowSpacing="0"  Grid.Row="1">
+                <Label Text="Data Inicial" FontSize="18" Padding="0" FontAttributes="Bold" TextColor="Black"/>
+                <Label Text="Data do evento" FontSize="12" Grid.Row="1" Padding="0"/>
+                <inputLayout:SfTextInputLayout         InputViewPadding="8"
+                                                   BackgroundColor="Transparent"
+                                                   Padding="0,-5,0,0"
+                                                   FocusedColor="{StaticResource PrimaryColor}"
+                                                   MinimumHeightRequest="100"                
+                                                   ReserveSpaceForAssistiveLabels="False"
+                                                   Margin="0,5,0,20"
+                                                   Grid.Row="2"
+                                                   ContainerType="Outlined"
+                                                   OutlineCornerRadius="8">
+                    <DatePicker Date="{Binding DataEvento}" Format="dd/MM" HorizontalOptions="Center"/>
+                </inputLayout:SfTextInputLayout>
+            </Grid>
+
+            <Grid BackgroundColor="Transparent" RowDefinitions="Auto,Auto,Auto" RowSpacing="0"  Grid.Row="1" Grid.Column="1">
+                <Label Text="Hota" FontSize="18" Padding="0" FontAttributes="Bold" TextColor="Black"/>
+                <Label Text="Horário do evento" FontSize="12" Grid.Row="1" Padding="0"/>
+                <inputLayout:SfTextInputLayout         InputViewPadding="8"
+                                                   BackgroundColor="Transparent"
+                                                   Padding="0,-5,0,0"
+                                                   FocusedColor="{StaticResource PrimaryColor}"
+                                                   MinimumHeightRequest="100"                
+                                                   ReserveSpaceForAssistiveLabels="False"
+                                                   Margin="0,5,0,20"
+                                                   Grid.Row="2"
+                                                   ContainerType="Outlined"
+                                                   OutlineCornerRadius="8">
+                    <TimePicker  Time="{Binding HorarioEvento}" HorizontalOptions="Center" />
+                </inputLayout:SfTextInputLayout>
+            </Grid>
+            <Grid BackgroundColor="Transparent" RowDefinitions="Auto,Auto,Auto" RowSpacing="0" Grid.ColumnSpan="2" Grid.Row="2">
+                <Label Text="Observação" FontSize="18" Padding="0" FontAttributes="Bold" TextColor="Black"/>
+                <Label Text="Escreva uma observação" FontSize="12" Grid.Row="1" Padding="0"/>
+                <inputLayout:SfTextInputLayout         InputViewPadding="8"
+                                                   BackgroundColor="Transparent"
+                                                   Padding="0,-5,0,0"
+                                                   FocusedColor="{StaticResource PrimaryColor}"
+                                                   MinimumHeightRequest="100"                
+                                                   ReserveSpaceForAssistiveLabels="False"
+                                                   Margin="0,5,0,20"
+                                                   Grid.Row="2"
+                                                   ContainerType="Outlined"
+                                                   OutlineCornerRadius="8">
+                    <Editor  Margin="10" Grid.Row="2"   AutoSize="TextChanges" Text="{Binding Observacao}"/>
+                </inputLayout:SfTextInputLayout>
+            </Grid>
         </Grid>
+        <buttons:SfButton Grid.Row="1" VerticalTextAlignment="Center"  HorizontalTextAlignment="Center"
+                          BackgroundColor="{StaticResource PrimaryColor}"
+                          FontAttributes="Bold" CornerRadius="9" Text="SALVAR" Command="{Binding AdicionaAgendaCommand}"/>
     </Grid>
+    
+    
 </ContentPage>

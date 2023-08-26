@@ -20,6 +20,8 @@ namespace Agenda_Movel.ViewModel
         public List<MenuInicial> ListMenuInicial { get { return _listaMenuInicial; } set { _listaMenuInicial = value; OnPropertyChanged("ListaMenuInicial"); } }
 
 
+
+
         public MenuPrincipalViewModel()
         {
             _listaMenuInicial = new List<MenuInicial>();
