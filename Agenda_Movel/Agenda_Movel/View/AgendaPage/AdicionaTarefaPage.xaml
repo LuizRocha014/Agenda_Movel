@@ -10,6 +10,20 @@
     <ContentPage.BindingContext>
         <viewModel:AdicionaTarefaViewModel/>
     </ContentPage.BindingContext>
+
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  
+            ClassId="Cancelar"
+                 Text="Cancelar"  
+                 Order="Primary"
+                 Priority="0" />
+        <ToolbarItem  
+            ClassId="Editar"
+                 Text="Editar"  
+                 Order="Secondary"
+                 Priority="0" />
+    </ContentPage.ToolbarItems>
     <Grid  Margin="10,10,10,10" RowDefinitions="92*,8*">
         <Grid BackgroundColor="Transparent"  RowDefinitions="Auto,Auto,Auto,Auto" ColumnDefinitions="50*,50*" RowSpacing="0">
 

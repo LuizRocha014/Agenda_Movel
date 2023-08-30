@@ -15,11 +15,15 @@ namespace Agenda_Movel.View.Agenda
     public partial class AdicionaTarefaPage : ContentPage
     {
         private AdicionaTarefaViewModel _adicionaTarefaViewModel;
-        public AdicionaTarefaPage(DateTime? dataSelecionada)
+        public AdicionaTarefaPage(DateTime? dataSelecionada, bool edicao = false)
         {
             InitializeComponent();
+          
             _adicionaTarefaViewModel = BindingContext as AdicionaTarefaViewModel;
             _adicionaTarefaViewModel.DataEvento = dataSelecionada ?? DateTime.Now;
+            _adicionaTarefaViewModel.Edicao = edicao;
+            _adicionaTarefaViewModel.ToolbarItem = this.ToolbarItems;
+            _adicionaTarefaViewModel.CarregaToolbar();
         }
 
       

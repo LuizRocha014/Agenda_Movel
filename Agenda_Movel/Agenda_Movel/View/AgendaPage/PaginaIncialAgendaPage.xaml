@@ -5,7 +5,7 @@
       x:Class="Agenda_Movel.View.Agenda.PaginaIncialAgendaPage"
              Title="Agenda">
 
-   
+
     <!--header-->
     <!--
     <Grid Grid.Row="0">
@@ -14,11 +14,24 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
     </Grid>-->
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem  
+            ClassId="Adicionar"
+                 Text="Adicionar"  
+                 Order="Primary"
+                Clicked="ToolbarItem_Clicked_1"
+                 Priority="0" />
+    </ContentPage.ToolbarItems>
 
     <Grid Grid.Row="0" IsVisible="true">
-        <syncfusion:SfSchedule  ScheduleView="MonthView" x:Name="schedule" CellTapped="schedule_CellTapped" CellDoubleTapped="schedule_CellDoubleTapped" HeaderHeight="100" VisibleDatesChangedEvent="schedule_VisibleDatesChangedEvent">
+        <syncfusion:SfSchedule  ScheduleView="MonthView" 
+                                x:Name="schedule" 
+                                CellTapped="schedule_CellTapped" 
+                                CellDoubleTapped="schedule_CellDoubleTapped"
+                                HeaderHeight="100" >
             <syncfusion:SfSchedule.MonthViewSettings>
-                <syncfusion:MonthViewSettings ShowAgendaView="true" TodayBackground="#306092" >
+                <syncfusion:MonthViewSettings ShowAgendaView="true" TodayBackground="#306092">
                     <syncfusion:MonthViewSettings.MonthLabelSettings>
                         <syncfusion:MonthLabelSettings  DateFormat="dd">
                             <syncfusion:MonthLabelSettings.DayFormat>
@@ -27,7 +40,7 @@
                         </syncfusion:MonthLabelSettings>
                     </syncfusion:MonthViewSettings.MonthLabelSettings>
                     <syncfusion:MonthViewSettings.AgendaViewStyle>
-                        <syncfusion:AgendaViewStyle DateFontColor="#396090" 
+                        <syncfusion:AgendaViewStyle DateFontColor="{StaticResource PrimaryColor}" 
                             HeaderHeight="40" 
                             DateFormat="dd MMMM, yyyy" 
                             DateFontSize="15" 
@@ -35,7 +48,6 @@
                             TimeFontColor="White" 
                             TimeFontSize="13" 
                             TimeFontFamily="Arial" 
-                            TimeFormat="hh a"
                             BackgroundColor="#f0f0f0" 
                             SubjectFontColor="White"
                             SubjectFontSize="13" 

@@ -13,9 +13,11 @@ namespace Agenda_Movel.ViewModel.AgendaViewModel
 
         private IAgendasRepository _agendaRepository;
         private Command _adicionaAgenda;
+        private IList<ToolbarItem> _toolbarItem;
 
         private string _titulo;
         private string _observacao;
+        private bool _edicao;
         private DateTime _dataInical;
         private TimeSpan _horarioEvento;
 
@@ -23,8 +25,10 @@ namespace Agenda_Movel.ViewModel.AgendaViewModel
 
         public string Titulo { get { return _titulo; } set { _titulo = value; OnPropertyChanged("Titulo"); } }
         public string Observacao { get { return _observacao; } set { _observacao = value; OnPropertyChanged("Observacao"); } }
+        public bool Edicao { get { return _edicao; } set { _edicao = value; OnPropertyChanged("Edicao"); } }
         public TimeSpan HorarioEvento { get { return _horarioEvento; } set { _horarioEvento = value; OnPropertyChanged("HorarioEvento"); } }
         public DateTime DataEvento { get { return _dataInical; } set { _dataInical = value; OnPropertyChanged("DataEvento"); } }
+        public IList<ToolbarItem> ToolbarItem { get { return _toolbarItem; } set { _toolbarItem = value; OnPropertyChanged("ToolbarItem"); } }
 
 
         public AdicionaTarefaViewModel()
@@ -33,8 +37,20 @@ namespace Agenda_Movel.ViewModel.AgendaViewModel
             _horarioEvento = TimeSpan.Parse(DateTime.Now.ToString("HH:mm"));
             _dataInical = DateTime.Now;
         }
+
+        public void CarregaToolbar()
+        {
+            ToolbarItem.Clear();
+            if(_edicao)
+            {
+                ToolbarItem.Add(new ToolbarItem { Text = "Editar", ClassId = "Editar", Order = ToolbarItemOrder.Primary });
+                ToolbarItem.Add(new ToolbarItem { Text = "Cencelar", ClassId = "Cancelar", Order = ToolbarItemOrder.Secondary });
+            }           
+        }
         public void AdicionaAgenda()
         {
+            _dataInical += _horarioEvento;
+            var dataFinal = _dataInical.AddMinutes(20);
             _agendaRepository.InsertOrReplace(new Agenda()
             {
 
@@ -42,7 +58,7 @@ namespace Agenda_Movel.ViewModel.AgendaViewModel
                 Titulo = _titulo,
                 Obaservacao = _observacao,
                 DataInicial = _dataInical,
-                DataFinal = _horarioEvento
+                DataFinal = dataFinal
 
 
             });
@@ -50,6 +66,8 @@ namespace Agenda_Movel.ViewModel.AgendaViewModel
             App.Current.MainPage.Navigation.PopAsync();
 
         }
+
+        
 
     }
 }

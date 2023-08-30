@@ -60,6 +60,7 @@ namespace Agenda_Movel.View.Agenda
                 {
                     Id = ag.Id,
                     StartTime = ag.DataInicial,
+                    EndTime = ag.DataFinal,
                     //Formatado na model a separação!
                     Subject = ag.Titulo,
                     Location = "Gama STI",
@@ -98,9 +99,12 @@ namespace Agenda_Movel.View.Agenda
             App.Current.MainPage.Navigation.PushAsync(new AdicionaTarefaPage(data),false);
         }
 
-        private void schedule_VisibleDatesChangedEvent(object sender, Syncfusion.SfSchedule.XForms.VisibleDatesChangedEventArgs e)
+        private void ToolbarItem_Clicked_1(object sender, EventArgs e)
         {
-            Console.WriteLine("teste");
+            
+           App.Current.MainPage.Navigation.PushAsync(new AdicionaTarefaPage(_dataAddAgenda), false);
         }
+
+        
     }
 }
