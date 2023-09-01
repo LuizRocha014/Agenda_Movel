@@ -12,7 +12,7 @@ namespace Agenda_Movel
         {
             InitializeComponent();
             SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NGaF1cWGhAYVBpR2NbfE54flVPal1SVBYiSV9jS31TfkVnW39fcnVTT2NaVA==");
-            MainPage =  new NavigationPage(new MenuPrincipalPage());
+            MainPage =  new NavigationPage(new NovoMenuPrincipal());
         }
 
         protected override void OnStart()

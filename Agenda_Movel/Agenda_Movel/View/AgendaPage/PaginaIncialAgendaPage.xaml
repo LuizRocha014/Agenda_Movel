@@ -14,7 +14,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
     </Grid>-->
-    <ContentPage.ToolbarItems>
+    <!--<ContentPage.ToolbarItems>
 
         <ToolbarItem  
             ClassId="Adicionar"
@@ -22,11 +22,11 @@
                  Order="Primary"
                 Clicked="ToolbarItem_Clicked_1"
                  Priority="0" />
-    </ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems>-->
 
-    <Grid Grid.Row="0" IsVisible="true">
+    <!--<Grid Grid.Row="0" IsVisible="true">
         <syncfusion:SfSchedule  ScheduleView="MonthView" 
-                                x:Name="schedule" 
+                                x:Name="dffs" 
                                 CellTapped="schedule_CellTapped" 
                                 CellDoubleTapped="schedule_CellDoubleTapped"
                                 HeaderHeight="100" >
@@ -35,7 +35,7 @@
                     <syncfusion:MonthViewSettings.MonthLabelSettings>
                         <syncfusion:MonthLabelSettings  DateFormat="dd">
                             <syncfusion:MonthLabelSettings.DayFormat>
-                                <OnPlatform x:TypeArguments="x:String" iOS="EEE" Android="EEE" />
+                                <OnPlatform x:TypeArguments="x:String" />
                             </syncfusion:MonthLabelSettings.DayFormat>
                         </syncfusion:MonthLabelSettings>
                     </syncfusion:MonthViewSettings.MonthLabelSettings>
@@ -58,5 +58,5 @@
                 </syncfusion:MonthViewSettings>
             </syncfusion:SfSchedule.MonthViewSettings>
         </syncfusion:SfSchedule>
-    </Grid>
+    </Grid>-->
 </ContentPage>

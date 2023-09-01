@@ -32,6 +32,7 @@ namespace Agenda_Movel.Data.Context
             _sqlLiteConnection = new SQLiteConnection(databasePath);
 
             _sqlLiteConnection.CreateTable<Agenda>();
+            _sqlLiteConnection.CreateTable<Cliente>();
         }
 
 
