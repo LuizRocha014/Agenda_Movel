@@ -20,10 +20,13 @@ namespace Agenda_Movel.View
         private PaginaIncialAgendaViewModel _paginaIncialAgendaViewModel;
         private DateTime _dataAddAgenda;
         private DateTime _monthSelected;
-        public NovoMenuPrincipal()
+        public  NovoMenuPrincipal()
         {
             _paginaIncialAgendaViewModel = new PaginaIncialAgendaViewModel();
             BindingContext = _paginaIncialAgendaViewModel;
+            _paginaIncialAgendaViewModel.ToolbarItem = this.ToolbarItems;
+            this.ToolbarItems.Clear();
+             _paginaIncialAgendaViewModel.TrocaTabView(0);
             InitializeComponent();
         }
 
@@ -101,6 +104,11 @@ namespace Agenda_Movel.View
         {
 
             App.Current.MainPage.Navigation.PushAsync(new AdicionaTarefaPage(_dataAddAgenda), false);
+        }
+
+        private void tabView_SelectionChanged(object sender, Syncfusion.XForms.TabView.SelectionChangedEventArgs e)
+        {
+            _paginaIncialAgendaViewModel.TrocaTabView(e.Index);
         }
     }
 }

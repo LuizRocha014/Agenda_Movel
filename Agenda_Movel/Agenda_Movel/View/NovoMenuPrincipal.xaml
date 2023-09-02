@@ -3,9 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:tabView="http://schemas.syncfusion.com/xamarin" xmlns:syncfusion="clr-namespace:Syncfusion.SfSchedule.XForms;assembly=Syncfusion.SfSchedule.XForms"
              x:Class="Agenda_Movel.View.NovoMenuPrincipal" 
-             NavigationPage.HasNavigationBar="True" >
+             NavigationPage.HasNavigationBar="True"
+             Title="{Binding Titulo}">
+
+   
+
     <ContentPage.Content>
-        <tabView:SfTabView BackgroundColor="#f6f6f6" VisibleHeaderCount="3" TabHeaderPosition="Bottom" x:Name="tabView">
+        <tabView:SfTabView BackgroundColor="#f6f6f6" VisibleHeaderCount="3" TabHeaderPosition="Bottom" x:Name="tabView" SelectionChanged="tabView_SelectionChanged">
             <tabView:SfTabItem Title="Home">
                 <tabView:SfTabItem.Content>
                     <Grid BackgroundColor="White"  >
