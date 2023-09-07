@@ -1,19 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:tabView="http://schemas.syncfusion.com/xamarin" xmlns:syncfusion="clr-namespace:Syncfusion.SfSchedule.XForms;assembly=Syncfusion.SfSchedule.XForms"
+             xmlns:tabView="http://schemas.syncfusion.com/xamarin" xmlns:syncfusion="clr-namespace:Syncfusion.SfSchedule.XForms;assembly=Syncfusion.SfSchedule.XForms" xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              x:Class="Agenda_Movel.View.NovoMenuPrincipal" 
              NavigationPage.HasNavigationBar="True"
              Title="{Binding Titulo}">
 
-   
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Adicionar"
+                     ClassId="Adicionar"
+                     Clicked="ToolbarItem_Clicked_1"
+                     Order="Secondary"/>
+    </ContentPage.ToolbarItems>-->
 
     <ContentPage.Content>
-        <tabView:SfTabView BackgroundColor="#f6f6f6" VisibleHeaderCount="3" TabHeaderPosition="Bottom" x:Name="tabView" SelectionChanged="tabView_SelectionChanged">
+        <tabView:SfTabView BackgroundColor="WhiteSmoke" VisibleHeaderCount="3" TabHeaderPosition="Bottom" x:Name="tabView" SelectionChanged="tabView_SelectionChanged">
             <tabView:SfTabItem Title="Home">
                 <tabView:SfTabItem.Content>
-                    <Grid BackgroundColor="White"  >
-                       
+                    <Grid BackgroundColor="Transparent" RowDefinitions="10*,90*"  >
+                        <Grid ColumnDefinitions="90*,10*">
+                            <Label Text="Lista de Agendas" HorizontalTextAlignment="Center" Grid.ColumnSpan="2" FontSize="Title" TextColor="Black" VerticalTextAlignment="Center"/>
+                        </Grid>
+                        <listView:SfListView x:Name="listView" ItemsSource="{Binding ListaAgendaHome}"  ItemSize="100" ItemSpacing="5" Grid.Row="1" >
+                            <listView:SfListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame BackgroundColor="White" BorderColor="LightGray" Margin="10,0,10,0" CornerRadius="8" HasShadow="False" Padding="5">
+                                        <Grid BackgroundColor="Aqua" Padding="0">
+                                            <Label Text="{Binding Titulo}"/>
+                                        </Grid>
+                                    </Frame>
+                                </DataTemplate>
+                            </listView:SfListView.ItemTemplate>
+                            </listView:SfListView>
                     </Grid>
                 </tabView:SfTabItem.Content>
             </tabView:SfTabItem>

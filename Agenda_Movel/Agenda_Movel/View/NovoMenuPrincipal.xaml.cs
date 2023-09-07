@@ -90,7 +90,7 @@ namespace Agenda_Movel.View
         }
         private void schedule_CellTapped(object sender, Syncfusion.SfSchedule.XForms.CellTappedEventArgs e)
         {
-            _dataAddAgenda = e.Datetime;
+            _paginaIncialAgendaViewModel.DataAddAgenda = e.Datetime;
         }
 
         private void schedule_CellDoubleTapped(object sender, Syncfusion.SfSchedule.XForms.CellTappedEventArgs e)
