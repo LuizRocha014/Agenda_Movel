@@ -11,7 +11,7 @@ namespace Agenda_Movel
         public App()
         {
             InitializeComponent();
-            SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NGaF1cWGhIfkxyWmFZfV1gc19HZVZVRGY/P1ZhSXxQdkxjXX5XcXxQQmNVVE0=");
+            SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NAaF5cWWJCfEx3WmFZfVpgcF9CYVZTTGY/P1ZhSXxXdkRjW35YdHVXT2VbU0I=");
             MainPage =  new NavigationPage(new NovoMenuPrincipal());
         }
 

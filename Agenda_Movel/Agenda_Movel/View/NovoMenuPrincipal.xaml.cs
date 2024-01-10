@@ -53,7 +53,7 @@ namespace Agenda_Movel.View
             try
             {
                 //Cria uma instância para ScheduleAppointmentCollection
-                var list = _paginaIncialAgendaViewModel.IniciaListAgenda();
+                var list = _paginaIncialAgendaViewModel.CarretaListaAgenda();
                 //Para que  a lista que retornou do WS seja reconhecida como Appointment.
                 ScheduleAppointmentCollection scheduleAppointmentCollection = new ScheduleAppointmentCollection();
                 //_agendaPartialViewModel.ListarAgenda();

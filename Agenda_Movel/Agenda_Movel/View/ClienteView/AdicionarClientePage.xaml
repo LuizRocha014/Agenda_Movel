@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" 
+             xmlns:syncmaskededit="clr-namespace:Syncfusion.XForms.MaskedEdit;assembly=Syncfusion.SfMaskedEdit.XForms"
+             x:Class="Agenda_Movel.View.ClienteView.AdiconarClientePage"
+             xmlns:viewModel="clr-namespace:Agenda_Movel.ViewModel.ClienteViewModel"
+             Title="Cadastro de Cliente">
+    <ContentPage.BindingContext>
+        <viewModel:AdiconarClienteViewModel/>
+    </ContentPage.BindingContext>
+    <Grid  Margin="10,10,10,10" RowDefinitions="92*,8*">
+        <ScrollView>
+            <Grid BackgroundColor="Transparent"  RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="50*,50*" RowSpacing="0">
+
+                <Grid BackgroundColor="Transparent" RowDefinitions="Auto,Auto,Auto" RowSpacing="0" Grid.ColumnSpan="2">
+                    <Label  FontSize="18" Padding="0" FontAttributes="Bold" TextColor="Black">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Nome"/>
+                                <Span Text=" *" TextColor="Red"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Text="Escreva o nome" FontSize="12" Grid.Row="1" Padding="0"/>
+                    <inputLayout:SfTextInputLayout         InputViewPadding="8"
+                                                   BackgroundColor="Transparent"
+                                                   Padding="0,-5,0,0"
+                                                   FocusedColor="{StaticResource PrimaryColor}"
+                                                   MinimumHeightRequest="100"                
+                                                   ReserveSpaceForAssistiveLabels="False"
+                                                   Margin="0,5,0,20"
+                                                   Grid.Row="2"
+                                                   ContainerType="Outlined"
+                                                   OutlineCornerRadius="8">
+                        <Entry  Margin="10" Grid.Row="2"  x:Name="NomeEditor"   />
+                    </inputLayout:SfTextInputLayout>
+                </Grid>
+
+                <Grid BackgroundColor="Transparent"  RowDefinitions="Auto,Auto,Auto" RowSpacing="0" Grid.ColumnSpan="2" Grid.Row="1">
+                    <Label FontSize="18" Padding="0" FontAttributes="Bold" TextColor="Black">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span  Text="Sobrenome"/>
+                                <Span Text=" *" TextColor="Red"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Text="Escreva o sobrenome" FontSize="12" Grid.Row="1" Padding="0"/>
+                    <inputLayout:SfTextInputLayout         InputViewPadding="8"
+                                                   BackgroundColor="Transparent"
+                                                   Padding="0,-5,0,0"
+                                                   FocusedColor="{StaticResource PrimaryColor}"
+                                                   MinimumHeightRequest="100"                
+                                                   ReserveSpaceForAssistiveLabels="False"
+                                                   Margin="0,5,0,20"
+                                                   Grid.Row="2"
+                                                   ContainerType="Outlined"
+                                                   OutlineCornerRadius="8">
+                        <Editor  Margin="10" Grid.Row="2"   AutoSize="TextChanges" x:Name="SobrenomeEditor" />
+                    </inputLayout:SfTextInputLayout>
+                </Grid>
+                <Grid BackgroundColor="Transparent" RowDefinitions="Auto,Auto,Auto" RowSpacing="0" Grid.ColumnSpan="2" Grid.Row="2">
+                    <Label Text="Telefone Principal" FontSize="18" Padding="0" FontAttributes="Bold" TextColor="Black">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Telefone Principal" />
+                                <Span Text=" *" TextColor="Red"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Text="Digite o telefone principal" FontSize="12" Grid.Row="1" Padding="0"/>
+                    <inputLayout:SfTextInputLayout         InputViewPadding="8"
+                                                   BackgroundColor="Transparent"
+                                                   Padding="0,-5,0,0"
+                                                   FocusedColor="{StaticResource PrimaryColor}"
+                                                   MinimumHeightRequest="100"                
+                                                   ReserveSpaceForAssistiveLabels="False"
+                                                   Margin="0,5,0,20"
+                                                   Grid.Row="2"
+                                                   ContainerType="Outlined"
+                                                   OutlineCornerRadius="8">
+                        <syncmaskededit:SfMaskedEdit x:Name="maskedEdit" MaskType="Text" Mask="(00) 0 0000-0000" Watermark="(00) 0 0000-0000"/>
+                    </inputLayout:SfTextInputLayout>
+                </Grid>
+                <Grid BackgroundColor="Transparent" RowDefinitions="Auto,Auto,Auto" RowSpacing="0" Grid.ColumnSpan="2" Grid.Row="3">
+                    <Label Text="Telefone Secundário" FontSize="18" Padding="0" FontAttributes="Bold" TextColor="Black"/>
+                    <Label Text="Digite o telefone secundário" FontSize="12" Grid.Row="1" Padding="0"/>
+                    <inputLayout:SfTextInputLayout         InputViewPadding="8"
+                                                   BackgroundColor="Transparent"
+                                                   Padding="0,-5,0,0"
+                                                   FocusedColor="{StaticResource PrimaryColor}"
+                                                   MinimumHeightRequest="100"                
+                                                   ReserveSpaceForAssistiveLabels="False"
+                                                   Margin="0,5,0,20"
+                                                   Grid.Row="2"
+                                                   ContainerType="Outlined"
+                                                   OutlineCornerRadius="8">
+                        <syncmaskededit:SfMaskedEdit x:Name="maskedEdit2" MaskType="Text" Mask="(00) 0 0000-0000" Watermark="(00) 0 0000-0000"/>
+                    </inputLayout:SfTextInputLayout>
+                </Grid>
+                <Grid BackgroundColor="Transparent" RowDefinitions="Auto,Auto,Auto" RowSpacing="0" Grid.ColumnSpan="2" Grid.Row="4">
+                    <Label  FontSize="18" Padding="0" FontAttributes="Bold" TextColor="Black">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="CEP" />
+                                <Span Text=" *" TextColor="Red"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Text="Digite o CEP" FontSize="12" Grid.Row="1" Padding="0"/>
+                    <inputLayout:SfTextInputLayout         InputViewPadding="8"
+                                                   BackgroundColor="Transparent"
+                                                   Padding="0,-5,0,0"
+                                                   FocusedColor="{StaticResource PrimaryColor}"
+                                                   MinimumHeightRequest="100"                
+                                                   ReserveSpaceForAssistiveLabels="False"
+                                                   Margin="0,5,0,20"
+                                                   Grid.Row="2"
+                                                   ContainerType="Outlined"
+                                                   OutlineCornerRadius="8">
+                        <syncmaskededit:SfMaskedEdit x:Name="maskedEdit3" MaskType="Text" Mask="00000-000" ValueChanged="maskedEdit3_ValueChanged"  />
+                    </inputLayout:SfTextInputLayout>
+                </Grid>
+                <Grid BackgroundColor="Transparent" RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="60*,40*" RowSpacing="0" Grid.ColumnSpan="2" Grid.Row="5" IsVisible="{Binding IsEndereco}">
+                    <Label  FontSize="18" Padding="0" FontAttributes="Bold" TextColor="Black">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Logradouro" />
+                                <Span Text=" *" TextColor="Red"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <inputLayout:SfTextInputLayout     InputViewPadding="8"
+                                                   BackgroundColor="Transparent"
+                                                   Padding="0,-5,0,0"
+                                                   FocusedColor="{StaticResource PrimaryColor}"
+                                                   MinimumHeightRequest="100"                
+                                                   ReserveSpaceForAssistiveLabels="False"
+                                                   Margin="0,5,0,20"
+                                                   Grid.Row="1"
+                                                   ContainerType="Outlined"
+                                                   OutlineCornerRadius="8">
+                        <Entry Text="{Binding Rua}" IsEnabled="False" />
+                    </inputLayout:SfTextInputLayout>
+                    <Label  FontSize="18" Padding="0" Grid.Column="1"   FontAttributes="Bold" TextColor="Black">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Numero" />
+                                <Span Text=" *" TextColor="Red"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <inputLayout:SfTextInputLayout     InputViewPadding="8"
+                                                   BackgroundColor="Transparent"
+                                                   Padding="0,-5,0,0"
+                                                   FocusedColor="{StaticResource PrimaryColor}"
+                                                   MinimumHeightRequest="100"                
+                                                   ReserveSpaceForAssistiveLabels="False"
+                                                   Margin="0,5,0,20" 
+                                                   Grid.Row="1"
+                                                   Grid.Column="1"
+                                                   ContainerType="Outlined"
+                                                   OutlineCornerRadius="8">
+                        <Entry  Keyboard="Chat" TextChanged="Entry_TextChanged_1"/>
+                    </inputLayout:SfTextInputLayout>
+                    <Label  FontSize="18" Padding="0" Grid.ColumnSpan="2" Grid.Row="2"  FontAttributes="Bold" TextColor="Black">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Cidade" />
+                                <Span Text=" *" TextColor="Red"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <inputLayout:SfTextInputLayout     InputViewPadding="8"
+                                                   BackgroundColor="Transparent"
+                                                   Padding="0,-5,0,0"
+                                                   FocusedColor="{StaticResource PrimaryColor}"
+                                                   MinimumHeightRequest="100"                
+                                                   ReserveSpaceForAssistiveLabels="False"
+                                                   Margin="0,5,0,20"
+                                                   Grid.Row="3"
+                                                   Grid.ColumnSpan="2"
+                                                   ContainerType="Outlined"
+                                                   OutlineCornerRadius="8">
+                        <Entry Text="{Binding Cidade}" IsEnabled="false"/>
+                    </inputLayout:SfTextInputLayout>
+                </Grid>
+            </Grid>
+        </ScrollView>
+        <buttons:SfButton Grid.Row="1" VerticalTextAlignment="Center"  HorizontalTextAlignment="Center"
+                          BackgroundColor="{StaticResource PrimaryColor}"
+                          FontAttributes="Bold" CornerRadius="9" Text="SALVAR" Clicked="SfButton_Clicked"/>
+    </Grid>
+</ContentPage>

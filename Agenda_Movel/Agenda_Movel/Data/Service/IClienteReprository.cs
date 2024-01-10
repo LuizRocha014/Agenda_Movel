@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Agenda_Movel.Data.Service
 {
-    interface IClienteReprository: ICoreRepository<Cliente>
+     interface IClienteReprository: ICoreRepository<Cliente>
     {
+        List<Cliente> GetCLientesOrder();
     }
 }

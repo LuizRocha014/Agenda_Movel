@@ -25,8 +25,18 @@
                             <listView:SfListView.ItemTemplate>
                                 <DataTemplate>
                                     <Frame BackgroundColor="White" BorderColor="LightGray" Margin="10,0,10,0" CornerRadius="8" HasShadow="False" Padding="5">
-                                        <Grid BackgroundColor="Aqua" Padding="0">
-                                            <Label Text="{Binding Titulo}"/>
+                                        <Grid BackgroundColor="Transparent" Padding="0" RowDefinitions="Auto,Auto,Auto" RowSpacing="0">
+                                            <Label Margin="10,5,0,0" Text="{Binding Titulo}" FontAttributes="Bold" FontSize="18"/>
+                                            <Label Margin="10,0,0,0" Grid.Row="1" >
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="Data: "/>
+                                                        <Span Text="12/01/2023 "/>
+                                                        <Span Text="Horário: "/>
+                                                        <Span Text="15:00"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
                                         </Grid>
                                     </Frame>
                                 </DataTemplate>
@@ -74,7 +84,28 @@
             </tabView:SfTabItem>
             <tabView:SfTabItem Title="Clientes">
                 <tabView:SfTabItem.Content>
-                    <Grid BackgroundColor="Green" />
+                    <Grid BackgroundColor="Transparent" RowDefinitions="10*,90*"  >
+                        <Label  Text="Lista de Clientes" HorizontalTextAlignment="Center"  FontSize="Title" TextColor="Black" VerticalTextAlignment="Center"/>
+                        <listView:SfListView x:Name="listViewCliente" ItemsSource="{Binding ListaCliente}"  ItemSize="80"  ItemSpacing="5" Grid.Row="1" >
+                            <listView:SfListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame BackgroundColor="White" BorderColor="LightGray" Margin="10,0,10,0" CornerRadius="8" HasShadow="False" Padding="5">
+                                        <Grid BackgroundColor="Transparent" Padding="0" RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="60*,40*">
+                                            <Label Margin="10,5,0,0" Text="{Binding NomeSobrenomeFormat}" FontSize="18" TextColor="DarkGray" FontAttributes="Bold" Grid.ColumnSpan="2" LineBreakMode="TailTruncation"/>
+                                            <Label Margin="10,0,0,0" Text="{Binding TelefoneFormatado}" Grid.Row="1" MaxLines="2">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="Tel: " FontAttributes="Bold" TextColor="DarkGray" FontSize="16"/>
+                                                        <Span Text="{Binding TelefoneFormatado}"  TextColor="Gray" FontSize="14"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                        </Grid>
+                                    </Frame>
+                                </DataTemplate>
+                            </listView:SfListView.ItemTemplate>
+                        </listView:SfListView>
+                    </Grid>
                 </tabView:SfTabItem.Content>
             </tabView:SfTabItem>
         </tabView:SfTabView>
